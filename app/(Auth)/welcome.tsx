@@ -10,7 +10,7 @@ const welcome = () => {
       <SafeAreaView>
         <KeyboardAvoidingView>
           <View>
-            <Text>Welcome</Text>
+            <Text>get started</Text>
           </View>
         </KeyboardAvoidingView>
       </SafeAreaView>
