@@ -14,6 +14,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [agreed, setAgreed] = useState(false);
 
   return (
     <Background style={styles.Background}>
@@ -56,8 +57,12 @@ const Signup = () => {
                   />
                 </TouchableOpacity>
               </View>
-              <TouchableOpacity style={styles.checkBoxContainer}>
-                <View style={styles.checkBox} >
+              <TouchableOpacity style={styles.checkBoxContainer} onPress={() => setAgreed(!agreed)} activeOpacity={0.8}>
+                <View style={[styles.checkBox, agreed && { backgroundColor: colors.secondary, borderColor: colors.primary, justifyContent: 'center', alignItems: 'center' }] }>
+                  {/* Show check icon if checked */}
+                  {agreed && (
+                    <Ionicons name="checkmark" size={10} color="#fff" />
+                  )}
                 </View>
                 <Text style={styles.terms}>I agree to the <Link href={'/(Auth)/signup'} style={styles.link}>Terms and Conditions</Link> and {'\n'}<Link href={'/(Auth)/signup'} style={styles.link}>Privacy Policy</Link></Text>
               </TouchableOpacity>

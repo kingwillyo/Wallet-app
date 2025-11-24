@@ -52,5 +52,6 @@ const styles = StyleSheet.create({
         fontWeight: 400,
         justifyContent: 'center',
         textAlign: 'center',
+        marginBottom: 54,
     }
 });
