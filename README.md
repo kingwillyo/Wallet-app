@@ -1,51 +1,87 @@
-# Welcome to your Expo app 💳
+# 🔐 Wallet App – Authentication (React Native + Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is the **authentication module** for a modern digital wallet mobile application built with **React Native (Expo)**.  
+The current version includes a fully working onboarding → login → signup → OTP verification flow based on the Figma UI design.
 
-## Get started
+> 🚧 **Project is in progress** — this repository currently contains only the authentication system.  
+More features (dashboard, transactions, cards, and more) will be added later.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## ✨ Features Completed
 
-2. Start the app
+### ✅ Onboarding Screens
+- Swipable intro screens
+- Clean illustrations + text
+- "Get Started" CTA
 
-   ```bash
-   npx expo start
-   ```
+### ✅ Login Flow
+- Email & password fields
+- Password hiding toggle
+- Validation & error handling
+- “Forgot Password?” UI prepared
 
-In the output, you'll find options to open the app in a
+### ✅ Sign Up Flow
+- Create new account screen
+- Full name, email, password inputs
+- Form validation
+- Terms & Conditions checkbox
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### ✅ OTP Verification
+- Enter 4–6 digit OTP
+- Animated verification UI
+- OTP completion screen
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### ✅ UI/UX Styling
+- Exact match to the Figma UI  
+- Modern gradients & illustrations
+- Smooth navigation and transitions
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 🛠 Tech Stack
 
-```bash
-npm run reset-project
-```
+**Frontend**
+- React Native  
+- Expo  
+- React Navigation (Stack Navigator)  
+- Expo Linear Gradient  
+- React Native Reanimated *(if animations are used)*  
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+**State / Auth**
+- Context API / Hooks  
+- AsyncStorage *(for temporary session storage)*  
+- Mock auth logic *(replaceable with backend)*
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+📂 Project Structure
+/assets
+  /fonts
+  /images
+/src
+  /screens
+    - Onboarding/
+    - Login/
+    - Signup/
+    - OTP/
+  /components
+  /navigation
+  App.js
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-## Join the community
+🧩 Next Features Planned
 
-Join our community of developers creating universal apps.
+Dashboard (balance, transactions)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# Wallet-app
+Cards management
+
+Payments & transfers UI
+
+Notifications screen
+
+Profile updates
+
+Reusable components cleanup
+
+Full backend integration (Supabase / Firebase / Node.js)
