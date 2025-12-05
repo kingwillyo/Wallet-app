@@ -1,22 +1,23 @@
 import Input from "@/components/input";
-import { colors } from "@/constants/themes";
+import { styles } from "@/styles/auth";
 import { Ionicons } from "@expo/vector-icons";
 import { Background } from "@react-navigation/elements";
 import { Link } from "expo-router";
 import React, { useState } from "react";
+import { supabase } from "@/lib/superbase";
 import {
   Image,
   StatusBar,
-  KeyboardAvoidingView,
   Text,
   TextInput,
   TouchableOpacity,
   View,
+  Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { styles } from "@/styles/auth";
 
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { colors } from "@/constants/themes";
 
 const faceId = require("../../assets/images/face.png");
 
@@ -24,6 +25,17 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false)
+
+  async function signInWithEmail() {
+    setLoading(true)
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    })
+    if (error) Alert.alert(error.message)
+    setLoading(false)
+  }
 
   return (
     <Background style={styles.Background}>
@@ -52,6 +64,7 @@ const Login = () => {
                 onChangeText={setPassword}
                 placeholder="Password"
                 keyboardType="email-address"
+                placeholderTextColor={colors.iconInactive}
                 autoCapitalize="none"
                 secureTextEntry={!showPassword}
               />
@@ -69,11 +82,13 @@ const Login = () => {
             </View>
             <View style={styles.forgetContainer}>
               <TouchableOpacity>
-                <Link href={'/(Auth)/login'} style={styles.forget}>Forgot Password?</Link>
+                <Link href={"/(Auth)/login"} style={styles.forget}>
+                  Forgot Password?
+                </Link>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Login</Text>
+            <TouchableOpacity style={styles.button} onPress={() => signInWithEmail()}>
+              <Text style={styles.buttonText} disabled={loading}>Login</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.footer}>
@@ -91,4 +106,3 @@ const Login = () => {
 };
 
 export default Login;
-

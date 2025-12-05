@@ -8,3 +8,13 @@ export const colors = {
     iconInactive: '#B7B7B7',
     blueText: '#2B47FC',
 };
+
+export const fontSizes = {
+    xs: 12,
+    s: 16,
+    m: 20,
+    l: 24,
+    xl: 28,
+    xxl: 32,
+    xxxl: 36,
+};

@@ -1,4 +1,3 @@
-export interface form {
-    value: number,
+export interface inputProps {
     
 }

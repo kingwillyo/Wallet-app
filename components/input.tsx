@@ -1,11 +1,17 @@
-import { View, Text, TextInput, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
-import { colors } from '@/constants/themes'
-import { StyleSheet } from 'react-native'
-import { Ionicons } from '@expo/vector-icons';
+import { colors } from "@/constants/themes";
+import React from "react";
+import { StyleSheet, TextInput, TextInputProps, View } from "react-native";
 
-const Input = ({name, value, placeholder, keyboardType, autoCapitalize, textContentType, ...otherProps}) => {
-  
+const Input = ({
+  style,
+  value,
+  placeholder,
+  keyboardType,
+  autoCapitalize,
+  textContentType,
+  onChange,
+  ...otherProps
+}: TextInputProps) => {
   return (
     <View style={styles.container}>
       <TextInput
@@ -15,27 +21,28 @@ const Input = ({name, value, placeholder, keyboardType, autoCapitalize, textCont
         keyboardType={keyboardType}
         autoCapitalize={autoCapitalize}
         textContentType={textContentType}
+        placeholderTextColor={colors.iconInactive}
         {...otherProps}
       />
     </View>
-  )
+  );
 };
 
-export default Input
+export default Input;
 
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.form,
-    width: '100%',
+    width: "100%",
     height: 45,
     padding: 12,
     borderRadius: 10,
     marginBottom: 32,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between'
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   input: {
-    width: '80%',
+    width: "80%",
   },
 });
