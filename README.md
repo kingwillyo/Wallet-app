@@ -1,45 +1,45 @@
-# 🔐 Wallet App – Authentication (React Native + Expo)
+# Wallet App – Authentication (React Native + Expo)
 
 This is the **authentication module** for a modern digital wallet mobile application built with **React Native (Expo)**.  
 The current version includes a fully working onboarding → login → signup → OTP verification flow based on the Figma UI design.
 
-> 🚧 **Project is in progress** — this repository currently contains only the authentication system.  
+>  **Project is in progress** — this repository currently contains only the authentication system.  
 More features (dashboard, transactions, cards, and more) will be added later.
 
 ---
 
-## ✨ Features Completed
+## Features Completed
 
-### ✅ Onboarding Screens
+### Onboarding Screens
 - Swipable intro screens
 - Clean illustrations + text
 - "Get Started" CTA
 
-### ✅ Login Flow
+### Login Flow
 - Email & password fields
 - Password hiding toggle
 - Validation & error handling
 - “Forgot Password?” UI prepared
 
-### ✅ Sign Up Flow
+### Sign Up Flow
 - Create new account screen
 - Full name, email, password inputs
 - Form validation
 - Terms & Conditions checkbox
 
-### ✅ OTP Verification
+### OTP Verification
 - Enter 4–6 digit OTP
 - Animated verification UI
 - OTP completion screen
 
-### ✅ UI/UX Styling
+### UI/UX Styling
 - Exact match to the Figma UI  
 - Modern gradients & illustrations
 - Smooth navigation and transitions
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 **Frontend**
 - React Native  
@@ -55,7 +55,7 @@ More features (dashboard, transactions, cards, and more) will be added later.
 
 ---
 
-📂 Project Structure
+ Project Structure
 /assets
   /fonts
   /images
@@ -70,7 +70,7 @@ More features (dashboard, transactions, cards, and more) will be added later.
   App.js
 
 
-🧩 Next Features Planned
+ Next Features Planned
 
 Dashboard (balance, transactions)
 
